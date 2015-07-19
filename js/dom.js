@@ -19,10 +19,46 @@ function sumAll() {
   return sum(allVals);
 }
 
+function avgAll() {
+  var elems = document.getElementsByTagName('option').length;
+  return sumAll() / elems;
+}
+
+function avgSelected(elems) {
+  return sumSelected(elems) / elems.length;
+}
+
+function sumSelected(elems) {
+  var vals = [];
+  for (var i = 0; i < elems.length; i++) {
+    vals.push(parseInt(elems[i].value));
+  }
+  return sum(vals);
+}
+
+function grabSelected() {
+  var all = document.getElementsByTagName('option');
+  var selected = [];
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].selected === true)
+      selected.push(all[i]);
+  }
+  return selected;
+}
+
 var ansdiv = document.getElementById('ans');
 
 var btnSumAll = document.getElementById('sum-all');
-btnSumAll.setAttribute('onclick', "document.getElementById('ans').innerHTML=sumAll()");
+btnSumAll.setAttribute('onclick', "ansdiv.innerHTML=sumAll()");
 
 var btnCountSel = document.getElementById('count-selected');
-btnCountSel.setAttribute('onclick', "ansdiv.innerHTML = countSelected(document.getElementsByTagName('option'))");
+btnCountSel.setAttribute('onclick', "ansdiv.innerHTML=countSelected(document.getElementsByTagName('option'))");
+
+var btnSumSel = document.getElementById('sum-selected');
+btnSumSel.setAttribute('onclick', "ansdiv.innerHTML=sumSelected(grabSelected())");
+
+var btnAvgAll = document.getElementById('average-all');
+btnAvgAll.setAttribute('onclick', "ansdiv.innerHTML=avgAll()");
+
+var btnAvgSel = document.getElementById('average-selected');
+btnAvgSel.setAttribute('onclick', "ansdiv.innerHTML=avgSelected(grabSelected())");
