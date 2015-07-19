@@ -53,3 +53,22 @@ var price = {
     return selected;
   }
 };
+
+var names = {
+  all: function() {
+    return document.getElementsByClassName("all-names")[0].value.split("\n");
+  },
+  show: function(namesArr) {
+    //namesArr is an array of names as strings
+    var elems = [];
+    for (var i = 0; i < namesArr.length; i++) {
+      var nli = document.createElement('li');
+      nli.innerHTML = namesArr[i];
+      elems.push(nli);
+    }
+    return elems;
+  }
+
+}
+
+// console.log(names.show(names.all()));
