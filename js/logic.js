@@ -105,5 +105,4 @@ var names = {
     }
     return out;
   }
-
 }
