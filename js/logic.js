@@ -67,8 +67,43 @@ var names = {
       elems.push(nli);
     }
     return elems;
+  },
+  firstNames: function() {
+    var fulls = this.all();
+    var firsts = [];
+    for (var i = 0; i < fulls.length; i++) {
+      var space = fulls[i].indexOf(" ");
+      firsts.push(fulls[i].slice(0, space));
+    }
+    return firsts;
+  },
+  lastNames: function() {
+    var fulls = this.all();
+    var lasts = [];
+    for (var i = 0; i < fulls.length; i++) {
+      var space = fulls[i].indexOf(" ");
+      var last = fulls[i].slice(space + 1);
+      if (last.indexOf(" ") !== -1)
+        lasts.push(last.slice(0, last.indexOf(" ")));
+      else
+        lasts.push(last);
+    }
+    return lasts;
+  },
+  withLengths: function() {
+    var names = this.all();
+    var out = [];
+    for (var i = 0; i < names.length; i++) {
+      var spaces = 0;
+      var current = names[i];
+      var chars = names[i].length
+      for (var c = 0; c < current.length; c++) {
+        if (current[c] === " ")
+          spaces++;
+      }
+      out.push(current + ", " + (chars - spaces) + " characters");
+    }
+    return out;
   }
 
 }
-
-// console.log(names.show(names.all()));

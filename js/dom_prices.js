@@ -11,7 +11,7 @@ Hints for the first problem:
 */
 
 var priceAns = document.getElementById('ans');
-var nameAns = document.getElementById('name-ans')
+// var nameAns = document.getElementById('name-ans');
 
 // var btnAllNames = document.getElementById('all-names');
 // btnAllNames.setAttribute('onclick', "printNames(names.show(names.all()))");
@@ -34,11 +34,11 @@ btnAvgSel.setAttribute('onclick', "priceAns.innerHTML=price.avgSelected(price.gr
 // var btnAllNames = document.getElementById('all-names');
 // btnAllNames.setAttribute('onclick', "printNames(names.show(names.all()))");
 
-function printNames(elems) {
-  //elems is an array of li elements
-  //parent is element to add them to
-  for (var i = 0; i < elems.length; i++) {
-    nameAns.appendChild(elems[i]);
-    console.log(elems[i]);
-  }
-}
+// function printNames(elems) {
+//   //elems is an array of li elements
+//   //parent is element to add them to
+//   for (var i = 0; i < elems.length; i++) {
+//     nameAns.appendChild(elems[i]);
+//     console.log(elems[i]);
+//   }
+// }
