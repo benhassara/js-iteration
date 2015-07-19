@@ -10,42 +10,6 @@ Hints for the first problem:
 
 */
 
-function sumAll() {
-  var valElems = document.getElementsByTagName('option');
-  var allVals = [];
-  for (var i = 0; i < valElems.length; i++) {
-    allVals.push(parseInt(valElems[i].value));
-  }
-  return sum(allVals);
-}
-
-function avgAll() {
-  var elems = document.getElementsByTagName('option').length;
-  return sumAll() / elems;
-}
-
-function avgSelected(elems) {
-  return sumSelected(elems) / elems.length;
-}
-
-function sumSelected(elems) {
-  var vals = [];
-  for (var i = 0; i < elems.length; i++) {
-    vals.push(parseInt(elems[i].value));
-  }
-  return sum(vals);
-}
-
-function grabSelected() {
-  var all = document.getElementsByTagName('option');
-  var selected = [];
-  for (var i = 0; i < all.length; i++) {
-    if (all[i].selected === true)
-      selected.push(all[i]);
-  }
-  return selected;
-}
-
 var ansdiv = document.getElementById('ans');
 
 var btnSumAll = document.getElementById('sum-all');
