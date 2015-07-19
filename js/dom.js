@@ -13,16 +13,16 @@ Hints for the first problem:
 var ansdiv = document.getElementById('ans');
 
 var btnSumAll = document.getElementById('sum-all');
-btnSumAll.setAttribute('onclick', "ansdiv.innerHTML=sumAll()");
+btnSumAll.setAttribute('onclick', "ansdiv.innerHTML=price.sumAll()");
 
 var btnCountSel = document.getElementById('count-selected');
-btnCountSel.setAttribute('onclick', "ansdiv.innerHTML=countSelected(document.getElementsByTagName('option'))");
+btnCountSel.setAttribute('onclick', "ansdiv.innerHTML=price.countSelected(document.getElementsByTagName('option'))");
 
 var btnSumSel = document.getElementById('sum-selected');
-btnSumSel.setAttribute('onclick', "ansdiv.innerHTML=sumSelected(grabSelected())");
+btnSumSel.setAttribute('onclick', "ansdiv.innerHTML=price.sumSelected(price.grabSelected())");
 
 var btnAvgAll = document.getElementById('average-all');
-btnAvgAll.setAttribute('onclick', "ansdiv.innerHTML=avgAll()");
+btnAvgAll.setAttribute('onclick', "ansdiv.innerHTML=price.avgAll()");
 
 var btnAvgSel = document.getElementById('average-selected');
-btnAvgSel.setAttribute('onclick', "ansdiv.innerHTML=avgSelected(grabSelected())");
+btnAvgSel.setAttribute('onclick', "ansdiv.innerHTML=price.avgSelected(price.grabSelected())");
